@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contacto - Dolores Val Eyras</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">
+      <img src="imagenes/dve.jpg.png" alt="Logo de Dolores Val Eyras">
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h1 class="nombre">Dolores Val Eyras</h1>
+      <p class="rol">Comunicadora visual</p>
+      <p class="intro">Transformo instantes comunes en historias visuales.</p>
+
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="sobre_mi.html">Sobre mí</a></li>
+          <li><a href="series.html">Series</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="contacto.html" class="activo">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <footer class="copy">© 2025 – Dolores Val Eyras</footer>
+    </aside>
+
+    <section class="contenido">
+      <h1 class="nombre" style="margin-bottom:12px;">Contacto</h1>
+      <p class="intro" style="margin-bottom:16px;">Si querés trabajar conmigo o simplemente saludar, completá el formulario:</p>
+
+      <form class="formulario" action="#" method="post">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+
+        <label for="email">Correo electrónico</label>
+        <input id="email" name="email" type="email" placeholder="tu@email.com" required>
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu mensaje aquí..." required></textarea>
+
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
