@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Series - Dolores Val Eyras</title>
-  <link rel="stylesheet" href="css/estilos.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/estilos.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
+
 <body>
+  <!-- Topbar -->
   <header class="topbar">
     <div class="logo">
-      <img src="imagenes/dve.jpg.png" alt="Logo de Dolores Val Eyras">
+      <img src="imagenes/dve.jpg.png" alt="Logo de Dolores Val Eyras" />
     </div>
   </header>
 
   <main class="layout">
+    <!-- Sidebar común -->
     <aside class="sidebar">
       <h1 class="nombre">Dolores Val Eyras</h1>
       <p class="rol">Comunicadora visual</p>
@@ -32,67 +35,94 @@
       <footer class="copy">© 2025 – Dolores Val Eyras</footer>
     </aside>
 
+    <!-- Contenido -->
     <section class="contenido">
       <h1 class="nombre" style="margin-bottom:12px;">Series</h1>
-      <section class="series-lista">
 
-        <!-- Ítem 1 -->
-        <details class="detalle">
-          <summary>
-            <div class="thumb"><img src="imagenes/torre.JPG" alt="Torre"></div>
-            <div>
-              <div class="titulo-serie">Torre</div>
-              <div class="meta">Arquitectura urbana</div>
-            </div>
-          </summary>
-          <div class="contenido-serie">
-            <p>Una mirada a las líneas y texturas de la ciudad desde la cercanía.</p>
-            <div class="ficha">
-              <span><strong>Cámara:</strong> Canon AE-1 (35mm)</span>
-              <span><strong>Año:</strong> 2024</span>
-            </div>
-          </div>
-        </details>
+      <!-- Serie: Botes -->
+      <article id="botes" class="serie-detalle">
+        <h2>Botes</h2>
+        <p class="meta">Ribera y cotidiano — Nikon D750 (2023)</p>
+        <p>Texturas de agua y madera en escenas mínimas.</p>
 
-        <!-- Ítem 2 -->
-        <details class="detalle">
-          <summary>
-            <div class="thumb"><img src="imagenes/botes.JPG" alt="Botes"></div>
-            <div>
-              <div class="titulo-serie">Botes</div>
-              <div class="meta">Ribera y cotidiano</div>
-            </div>
-          </summary>
-          <div class="contenido-serie">
-            <p>Texturas de agua y madera en escenas mínimas.</p>
-            <div class="ficha">
-              <span><strong>Cámara:</strong> Nikon D750 (Full Frame)</span>
-              <span><strong>Año:</strong> 2023</span>
-            </div>
-          </div>
-        </details>
+        <div class="printshop">
+          <figure>
+            <img
+              src="imagenes/botes.JPG"
+              alt="Bote I"
+              onclick="openModal('imagenes/botes.JPG','Bote I','Nikon D750 (2023)','https://printshop.sumupstore.com/product/bote1')"
+            />
+          </figure>
 
-        <!-- Ítem 3 -->
-        <details class="detalle">
-          <summary>
-            <div class="thumb"><img src="imagenes/rollers.JPG" alt="Rollers"></div>
-            <div>
-              <div class="titulo-serie">Rollers</div>
-              <div class="meta">Movimiento y ciudad</div>
-            </div>
-          </summary>
-          <div class="contenido-serie">
-            <p>Velocidad, ritmo y gesto en la calle.</p>
-            <div class="ficha">
-              <span><strong>Cámara:</strong> Olympus Mju-II (35mm)</span>
-              <span><strong>Año:</strong> 2025</span>
-            </div>
-          </div>
-        </details>
+          <figure>
+            <img
+              src="imagenes/botes2.JPG"
+              alt="Bote II"
+              onclick="openModal('imagenes/botes2.JPG','Bote II','Nikon D750 (2023)','https://printshop.sumupstore.com/product/bote2')"
+            />
+          </figure>
+        </div>
+      </article>
 
-        <!-- Agregá más items replicando el bloque de <details> -->
-      </section>
+      <!-- Serie: Torre -->
+      <article id="torre" class="serie-detalle">
+        <h2>Torre</h2>
+        <p class="meta">Arquitectura urbana — Canon AE-1 (2024)</p>
+        <p>Una mirada a las líneas y texturas de la ciudad desde la cercanía.</p>
+
+        <div class="printshop">
+          <figure>
+            <img
+              src="imagenes/torre.JPG"
+              alt="Torre I"
+              onclick="openModal('imagenes/torre.JPG','Torre I','Canon AE-1 (2024)','https://printshop.sumupstore.com/product/torre1')"
+            />
+          </figure>
+        </div>
+      </article>
     </section>
   </main>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+    <button class="cerrar" aria-label="Cerrar" onclick="closeModal()">×</button>
+    <img id="modal-img" src="" alt="" />
+    <div class="modal-info">
+      <h3 id="modal-titulo"></h3>
+      <p id="modal-meta"></p>
+      <a id="modal-boton" href="#" target="_blank" rel="noopener" class="btn-comprar">Comprar</a>
+    </div>
+  </div>
+
+  <script>
+    function openModal(src, titulo, meta, link) {
+      const m = document.getElementById('modal');
+      document.getElementById('modal-img').src = src;
+      document.getElementById('modal-titulo').textContent = titulo;
+      document.getElementById('modal-meta').textContent = meta;
+      document.getElementById('modal-boton').href = link;
+
+      m.style.display = 'flex';
+      requestAnimationFrame(() => m.classList.add('show'));
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const m = document.getElementById('modal');
+      m.classList.remove('show');
+      setTimeout(() => (m.style.display = 'none'), 150);
+      document.body.style.overflow = 'auto';
+    }
+
+    // Cerrar con click en fondo
+    document.getElementById('modal').addEventListener('click', (e) => {
+      if (e.target.id === 'modal') closeModal();
+    });
+
+    // Cerrar con ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
 </body>
 </html>
