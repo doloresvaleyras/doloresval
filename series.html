@@ -8,7 +8,6 @@
 </head>
 
 <body>
-  <!-- Topbar -->
   <header class="topbar">
     <div class="logo">
       <img src="imagenes/dve.jpg.png" alt="Logo de Dolores Val Eyras" />
@@ -16,7 +15,6 @@
   </header>
 
   <main class="layout">
-    <!-- Sidebar común -->
     <aside class="sidebar">
       <h1 class="nombre">Dolores Val Eyras</h1>
       <p class="rol">Comunicadora visual</p>
@@ -35,51 +33,183 @@
       <footer class="copy">© 2025 – Dolores Val Eyras</footer>
     </aside>
 
-    <!-- Contenido -->
     <section class="contenido">
       <h1 class="nombre" style="margin-bottom:12px;">Series</h1>
 
-      <!-- Serie: Botes -->
-      <article id="botes" class="serie-detalle">
-        <h2>Botes</h2>
-        <p class="meta">Ribera y cotidiano — Nikon D750 (2023)</p>
-        <p>Texturas de agua y madera en escenas mínimas.</p>
-
-        <div class="printshop">
+      <!-- ===== Long Road: torre + dolores ===== -->
+      <details id="long-road" class="serie" aria-labelledby="lr-sum">
+        <summary id="lr-sum" class="serie-summary">
+          <div>
+            <h2>Long Road</h2>
+            <p class="meta">Arquitectura y trayectos — 35mm / Digital</p>
+            <p class="desc">Líneas, distancia y ritmo en el camino.</p>
+          </div>
+        </summary>
+        <div class="serie-grid">
           <figure>
-            <img
-              src="imagenes/botes.JPG"
-              alt="Bote I"
-              onclick="openModal('imagenes/botes.JPG','Bote I','Nikon D750 (2023)','https://printshop.sumupstore.com/product/bote1')"
-            />
+            <img src="imagenes/torre.jpg" alt="Torre"
+              onclick="openModal('imagenes/torre.jpg','Torre','Serie Long Road','#')" />
+            <figcaption>Torre</figcaption>
           </figure>
-
           <figure>
-            <img
-              src="imagenes/botes2.JPG"
-              alt="Bote II"
-              onclick="openModal('imagenes/botes2.JPG','Bote II','Nikon D750 (2023)','https://printshop.sumupstore.com/product/bote2')"
-            />
+            <img src="imagenes/dolores.jpg" alt="Dolores"
+              onclick="openModal('imagenes/dolores.jpg','Dolores','Serie Long Road','#')" />
+            <figcaption>Dolores</figcaption>
           </figure>
         </div>
-      </article>
+      </details>
 
-      <!-- Serie: Torre -->
-      <article id="torre" class="serie-detalle">
-        <h2>Torre</h2>
-        <p class="meta">Arquitectura urbana — Canon AE-1 (2024)</p>
-        <p>Una mirada a las líneas y texturas de la ciudad desde la cercanía.</p>
-
-        <div class="printshop">
+      <!-- ===== 31 en Movimiento: skate + rollers ===== -->
+      <details id="31-en-movimiento" class="serie" aria-labelledby="m31-sum">
+        <summary id="m31-sum" class="serie-summary">
+          <div>
+            <h2>31 en Movimiento</h2>
+            <p class="meta">Movimiento y barrio — 35mm / Digital</p>
+            <p class="desc">Skate, velocidad y gesto en la ciudad.</p>
+          </div>
+        </summary>
+        <div class="serie-grid">
           <figure>
-            <img
-              src="imagenes/torre.JPG"
-              alt="Torre I"
-              onclick="openModal('imagenes/torre.JPG','Torre I','Canon AE-1 (2024)','https://printshop.sumupstore.com/product/torre1')"
-            />
+            <img src="imagenes/skate.jpg" alt="Skate"
+              onclick="openModal('imagenes/skate.jpg','Skate','31 en Movimiento','#')" />
+            <figcaption>Skate</figcaption>
+          </figure>
+          <figure>
+            <img src="imagenes/rollers.jpg" alt="Rollers"
+              onclick="openModal('imagenes/rollers.jpg','Rollers','31 en Movimiento','#')" />
+            <figcaption>Rollers</figcaption>
           </figure>
         </div>
-      </article>
+      </details>
+
+      <!-- ===== Cavalan: caballos + glamping ===== -->
+      <details id="cavalan" class="serie" aria-labelledby="cav-sum">
+        <summary id="cav-sum" class="serie-summary">
+          <div>
+            <h2>Cavalan</h2>
+            <p class="meta">Campo y respiración — 35mm / Digital</p>
+            <p class="desc">Materia, silencio y distancia.</p>
+          </div>
+        </summary>
+        <div class="serie-grid">
+          <figure>
+            <img src="imagenes/caballos.jpg" alt="Caballos"
+              onclick="openModal('imagenes/caballos.jpg','Caballos','Cavalan','#')" />
+            <figcaption>Caballos</figcaption>
+          </figure>
+          <figure>
+            <img src="imagenes/glamping.jpg" alt="Glamping"
+              onclick="openModal('imagenes/glamping.jpg','Glamping','Cavalan','#')" />
+            <figcaption>Glamping</figcaption>
+          </figure>
+        </div>
+      </details>
+
+      <!-- ===== Superficies: botes ===== -->
+      <details id="superficies" class="serie" aria-labelledby="sup-sum">
+        <summary id="sup-sum" class="serie-summary">
+          <div>
+            <h2>Superficies</h2>
+          <p class="meta">Ribera y cotidiano — Nikon D750 (2023)</p>
+            <p class="desc">Texturas de agua y madera en escenas mínimas.</p>
+          </div>
+        </summary>
+        <div class="serie-grid">
+          <figure>
+            <img src="imagenes/botes.jpg" alt="Botes"
+              onclick="openModal('imagenes/botes.jpg','Botes','Superficies','https://printshop.sumupstore.com/product/bote1')" />
+            <figcaption>Botes</figcaption>
+          </figure>
+        </div>
+      </details>
+
+      <!-- ===== Encuentros: muro + arte ===== -->
+      <details id="encuentros" class="serie" aria-labelledby="enc-sum">
+        <summary id="enc-sum" class="serie-summary">
+          <div>
+            <h2>Encuentros</h2>
+            <p class="meta">Materia y composición — 35mm / Digital</p>
+            <p class="desc">Paredes, gestos y textura.</p>
+          </div>
+        </summary>
+        <div class="serie-grid">
+          <figure>
+            <img src="imagenes/muro.jpg" alt="Muro"
+              onclick="openModal('imagenes/muro.jpg','Muro','Encuentros','#')" />
+            <figcaption>Muro</figcaption>
+          </figure>
+          <figure>
+            <img src="imagenes/arte.jpg" alt="Arte"
+              onclick="openModal('imagenes/arte.jpg','Arte','Encuentros','#')" />
+            <figcaption>Arte</figcaption>
+          </figure>
+        </div>
+      </details>
+
+      <!-- ===== Dolomitas: lago + carezza ===== -->
+      <details id="dolomitas" class="serie" aria-labelledby="dolo-sum">
+        <summary id="dolo-sum" class="serie-summary">
+          <div>
+            <h2>Dolomitas</h2>
+            <p class="meta">Paisaje alpino — 35mm / Digital</p>
+            <p class="desc">Agua fría, pino y piedra.</p>
+          </div>
+        </summary>
+        <div class="serie-grid">
+          <figure>
+            <img src="imagenes/lago.jpg" alt="Lago"
+              onclick="openModal('imagenes/lago.jpg','Lago','Dolomitas','#')" />
+            <figcaption>Lago</figcaption>
+          </figure>
+          <figure>
+            <img src="imagenes/carezza.jpg" alt="Carezza"
+              onclick="openModal('imagenes/carezza.jpg','Carezza','Dolomitas','#')" />
+            <figcaption>Carezza</figcaption>
+          </figure>
+        </div>
+      </details>
+
+      <!-- ===== Naplavka: market ===== -->
+      <details id="naplavka" class="serie" aria-labelledby="nap-sum">
+        <summary id="nap-sum" class="serie-summary">
+          <div>
+            <h2>Naplavka</h2>
+            <p class="meta">Mercado y río — Digital</p>
+            <p class="desc">Escenas urbanas a la orilla.</p>
+          </div>
+        </summary>
+        <div class="serie-grid">
+          <figure>
+            <img src="imagenes/market.jpg" alt="Market"
+              onclick="openModal('imagenes/market.jpg','Market','Naplavka','#')" />
+            <figcaption>Market</figcaption>
+          </figure>
+        </div>
+      </details>
+
+      <!-- ===== Cultivos: parra + uvas ===== -->
+      <details id="cultivos" class="serie" aria-labelledby="cult-sum">
+        <summary id="cult-sum" class="serie-summary">
+          <div>
+            <h2>Cultivos</h2>
+            <p class="meta">Materia y color — 35mm / Digital</p>
+            <p class="desc">Parra, uvas y estación.</p>
+          </div>
+        </summary>
+        <div class="serie-grid">
+          <figure>
+            <img src="imagenes/parra.jpg" alt="Parra"
+              onclick="openModal('imagenes/parra.jpg','Parra','Cultivos','#')" />
+            <figcaption>Parra</figcaption>
+          </figure>
+          <figure>
+            <img src="imagenes/uvas.jpg" alt="Uvas"
+              onclick="openModal('imagenes/uvas.jpg','Uvas','Cultivos','#')" />
+            <figcaption>Uvas</figcaption>
+          </figure>
+        </div>
+      </details>
+
     </section>
   </main>
 
@@ -95,34 +225,40 @@
   </div>
 
   <script>
+    // Modal
     function openModal(src, titulo, meta, link) {
       const m = document.getElementById('modal');
       document.getElementById('modal-img').src = src;
       document.getElementById('modal-titulo').textContent = titulo;
       document.getElementById('modal-meta').textContent = meta;
-      document.getElementById('modal-boton').href = link;
-
+      document.getElementById('modal-boton').href = link || '#';
       m.style.display = 'flex';
       requestAnimationFrame(() => m.classList.add('show'));
       document.body.style.overflow = 'hidden';
     }
-
     function closeModal() {
       const m = document.getElementById('modal');
       m.classList.remove('show');
       setTimeout(() => (m.style.display = 'none'), 150);
       document.body.style.overflow = 'auto';
     }
-
-    // Cerrar con click en fondo
-    document.getElementById('modal').addEventListener('click', (e) => {
+    document.getElementById('modal').addEventListener('click', e => {
       if (e.target.id === 'modal') closeModal();
     });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-    // Cerrar con ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
-    });
+    // Abrir automáticamente la serie si viene con #hash
+    (function openTargetOnLoad(){
+      const id = location.hash.replace('#','');
+      if (!id) return;
+      const det = document.getElementById(id);
+      if (det && det.tagName.toLowerCase() === 'details') {
+        det.setAttribute('open','open');
+        // mejora el anclaje con header sticky
+        det.scrollIntoView({block:'start',behavior:'smooth'});
+      }
+    })();
   </script>
 </body>
 </html>
+
