@@ -54,17 +54,14 @@ body{
 }
 
 /* =========================
-   GALERÍA (Inicio)
+   GALERÍA (Inicio) + hover título
 ========================= */
 .galeria{display:grid;gap:16px;grid-template-columns:1fr}
 .galeria figure{width:100%}
 .galeria img{width:100%;border-radius:10px;object-fit:cover}
+@media (min-width:768px){.galeria{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.galeria{grid-template-columns:repeat(3,1fr)}}
 
-/* grillas responsivas */
-@media (min-width:768px){ .galeria{grid-template-columns:repeat(2,1fr)} }
-@media (min-width:1024px){ .galeria{grid-template-columns:repeat(3,1fr)} }
-
-/* hover con título */
 .foto{position:relative;overflow:hidden;border-radius:10px}
 .foto a{display:block;position:relative;text-decoration:none;color:inherit}
 .foto img{width:100%;height:auto;border-radius:10px;transition:transform .4s ease}
@@ -77,29 +74,52 @@ body{
 .foto:hover figcaption{opacity:1}
 
 /* =========================
-   SERIES (con figcaption visible)
+   SOBRE MÍ (por si usás esa página)
 ========================= */
-.serie-detalle{margin-bottom:60px}
-.serie-detalle h2{font-size:1.6rem;font-weight:800;margin-bottom:6px}
-.serie-detalle .meta{color:#6b7280;font-size:.95rem;margin-bottom:10px}
-.serie-detalle p{margin-bottom:18px;line-height:1.6;max-width:65ch}
+.about-grid{display:grid;gap:24px;align-items:start;margin-bottom:18px}
+.about-photo img{
+  width:100%;border-radius:12px;object-fit:cover;box-shadow:0 6px 18px rgba(0,0,0,.08)
+}
+.about-side .eyebrow{
+  font-size:.95rem;letter-spacing:.12em;text-transform:uppercase;color:#9ca3af;margin-bottom:.5rem;font-weight:800
+}
+.about-side .display{font-size:clamp(1.6rem,3.4vw,2.1rem);font-weight:900;line-height:1.15;margin-bottom:.75rem}
+.about-side .lede{color:#111;line-height:1.7;margin-bottom:.6rem;max-width:34ch}
+.about-body{margin-top:8px}
+.about-body p{color:#111;line-height:1.75;margin-bottom:10px;max-width:90ch}
+@media (min-width:1024px){.about-grid{grid-template-columns:minmax(520px,1.2fr) 1fr}}
 
-.printshop{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:24px;align-items:start
-}
-.printshop figure{
-  background:#fff;border:1px solid #e5e5e5;border-radius:12px;overflow:hidden;text-align:center;
-  transition:transform .25s ease,box-shadow .25s ease
-}
-.printshop figure:hover{transform:translateY(-4px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
-.printshop img{
-  width:100%;height:320px;object-fit:cover;display:block;border-bottom:1px solid #eee;cursor:pointer
-}
-.printshop figcaption{
-  font-weight:600;
-  margin:12px 0 8px;
-}
+/* =========================
+   SERVICIOS (y video ancho)
+========================= */
+.bloque{display:grid;gap:14px}
+.bloque h1{font-size:1.8rem;font-weight:800}
+.card{border:1px solid #eee;border-radius:12px;padding:16px;background:#fff}
+.card h3{font-size:1.1rem;font-weight:800;margin-bottom:.5rem}
+.card p{color:#333;line-height:1.6}
+.media-strip{margin:0 0 40px 0;border-radius:12px;overflow:hidden;position:relative;background:#000;aspect-ratio:21/9;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.media-strip video{width:100%;height:100%;object-fit:cover;display:block;border:none}
+
+/* =========================
+   SERIES (colapsables)
+========================= */
+.serie{border:1px solid #eee;border-radius:12px;margin-bottom:18px;overflow:hidden;background:#fff;scroll-margin-top:110px}
+.serie-summary{list-style:none;cursor:pointer;padding:16px 18px;background:#fff}
+.serie > summary::-webkit-details-marker{display:none}
+.serie-summary h2{font-size:1.4rem;font-weight:800;margin-bottom:4px}
+.serie-summary .meta{color:#6b7280;font-size:.95rem;margin-bottom:6px}
+.serie-summary .desc{color:#333}
+.serie:hover .serie-summary{background:#fafafa}
+
+/* contenido oculto hasta abrir o llegar con #hash */
+.serie-grid{display:none;padding:16px 18px;border-top:1px solid #eee;gap:24px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:start}
+.serie[open] .serie-grid{display:grid}
+.serie:target .serie-grid{display:grid}
+.serie:target .serie-summary{background:#f7faff}
+.serie img{width:100%;height:320px;object-fit:cover;border-radius:10px;cursor:pointer}
+.serie figure{text-align:center}
+.serie figcaption{margin-top:8px;font-weight:600}
 
 /* =========================
    MODAL COMPRA
@@ -131,45 +151,6 @@ body{
 .cerrar:hover{transform:scale(1.1)}
 
 /* =========================
-   SOBRE MÍ
-========================= */
-.about-grid{
-  display:grid;gap:24px;align-items:start;margin-bottom:18px
-}
-.about-photo img{
-  width:100%;border-radius:12px;object-fit:cover;
-  box-shadow:0 6px 18px rgba(0,0,0,.08)
-}
-.about-side .eyebrow{
-  font-size:.95rem;letter-spacing:.12em;text-transform:uppercase;
-  color:#9ca3af;margin-bottom:.5rem;font-weight:800
-}
-.about-side .display{
-  font-size:clamp(1.6rem,3.4vw,2.1rem);font-weight:900;line-height:1.15;margin-bottom:.75rem
-}
-.about-side .lede{
-  color:#111;line-height:1.7;margin-bottom:.6rem;max-width:34ch
-}
-.about-body{margin-top:8px}
-.about-body p{color:#111;line-height:1.75;margin-bottom:10px;max-width:90ch}
-.about-body strong{font-weight:800;color:#111}
-
-@media (min-width:1024px){
-  .about-grid{
-    grid-template-columns: minmax(520px,1.2fr) 1fr;
-  }
-}
-
-/* =========================
-   SERVICIOS
-========================= */
-.bloque{display:grid;gap:14px}
-.bloque h1{font-size:1.8rem;font-weight:800}
-.card{border:1px solid #eee;border-radius:12px;padding:16px;background:#fff}
-.card h3{font-size:1.1rem;font-weight:800;margin-bottom:.5rem}
-.card p{color:#333;line-height:1.6}
-
-/* =========================
    CONTACTO + NEWSLETTER
 ========================= */
 .formulario{max-width:560px}
@@ -184,19 +165,13 @@ body{
 }
 .formulario button:hover{opacity:.9}
 
-.newsletter{
-  margin-top:36px;padding:28px 22px;background:#fff;border:1px solid #eee;border-radius:14px
-}
+.newsletter{margin-top:36px;padding:28px 22px;background:#fff;border:1px solid #eee;border-radius:14px}
 .newsletter h2{font-size:clamp(1.6rem,2.7vw,2.6rem);line-height:1.15;font-weight:800;margin-bottom:12px}
 .newsletter .lead{color:#4b5563;line-height:1.7;margin-bottom:18px;max-width:60ch}
 .newsletter-form{width:100%}
 .newsletter-group{display:flex;gap:10px;align-items:center;width:100%}
-.newsletter-group input[type="email"]{
-  flex:1 1 auto;padding:14px 16px;border:1px solid #d1d5db;border-radius:10px;font:inherit;background:#fff
-}
-.newsletter-group button{
-  flex:0 0 auto;padding:14px 18px;border:0;border-radius:10px;background:#2a5ab8;color:#fff;font-weight:700;cursor:pointer
-}
+.newsletter-group input[type="email"]{flex:1 1 auto;padding:14px 16px;border:1px solid #d1d5db;border-radius:10px;font:inherit;background:#fff}
+.newsletter-group button{flex:0 0 auto;padding:14px 18px;border:0;border-radius:10px;background:#2a5ab8;color:#fff;font-weight:700;cursor:pointer}
 .newsletter-group button:hover{opacity:.95}
 .newsletter .muted{display:block;margin-top:10px;color:#6b7280}
 @media (max-width:480px){
