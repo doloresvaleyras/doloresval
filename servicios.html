@@ -7,213 +7,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <!-- TOPBAR -->
-  <header class="topbar">
-    <div class="logo">
-      <img src="imagenes/dve.jpg.png" alt="Logo de Dolores Val Eyras">
-    </div>
-  </header>
+<header class="topbar">
+  <div class="logo">
+    <img src="imagenes/dve.jpg.png" alt="Logo de Dolores Val Eyras">
+  </div>
+</header>
 
-  <main class="layout">
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <h1 class="nombre">Dolores Val Eyras</h1>
-      <p class="rol">Comunicadora visual</p>
-      <p class="intro">Transformo instantes comunes en historias visuales.</p>
+<main class="layout">
+  <aside class="sidebar">
+    <h1 class="nombre">Dolores Val Eyras</h1>
+    <p class="rol">Comunicadora visual</p>
+    <p class="intro">Transformo instantes comunes en historias visuales.</p>
 
-      <nav class="menu">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="sobre_mi.html">Sobre mí</a></li>
-          <li><a href="series.html">Series</a></li>
-          <li><a href="servicios.html" class="activo">Servicios</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="sobre_mi.html">Sobre mí</a></li>
+        <li><a href="series.html">Series</a></li>
+        <li><a href="servicios.html" class="activo">Servicios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
 
-      <footer class="copy">© 2025 – Dolores Val Eyras</footer>
-    </aside>
+    <footer class="copy">© 2025 – Dolores Val Eyras</footer>
+  </aside>
 
-    <!-- CONTENIDO -->
-    <section class="contenido">
-      <h1 class="nombre" style="margin-bottom:20px;">Servicios</h1>
+  <section class="contenido">
 
-      <!-- VIDEO ANCHO -->
-      <figure class="media-strip" aria-label="Video Corriendo">
-        <video
-          src="imagenes/corriendo.mp4"
-          poster="imagenes/corriendo.jpg"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata">
-        </video>
-      </figure>
+    <h1 class="nombre" style="margin-bottom:20px;">Servicios</h1>
 
-      <!-- =========================
-           SERVICIO 1 – FOTOGRAFÍA EDITORIAL
-      ========================== -->
-      <details id="editorial" class="servicio-bloque">
-        <summary class="servicio-summary">
-          <div>
-            <h2>Fotografía editorial</h2>
-            <p class="meta-servicio">
-              Retratos, productos, lifestyle y campañas con estética analógica y cinematográfica.
-            </p>
-          </div>
-        </summary>
+    <figure class="media-strip">
+      <video src="imagenes/corriendo.MP4"
+             poster="imagenes/corriendo.JPG"
+             autoplay muted loop playsinline preload="metadata"></video>
+    </figure>
+
+    <!-- ============================
+         SERVICIOS EXPANDIBLES
+    =============================== -->
+
+    <section class="bloque">
+
+      <!-- Fotografía editorial -->
+      <details class="servicio">
+        <summary><h3>Fotografía editorial</h3></summary>
+        <p class="serv-desc">Retratos, productos, lifestyle y campañas con estética analógica y cinematográfica.</p>
 
         <div class="servicio-grid">
-          <figure>
-            <img src="imagenes/alemania.JPG" alt="Alemania">
-            <figcaption>
-             
-              Muro de afiches y texturas urbanas: capas de color, tipografía y ruido visual que construyen una narrativa editorial.
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="imagenes/boedo.JPG" alt="Boedo">
-            <figcaption>
-             
-              Retrato en pasillo con luz baja y atmósfera cinematográfica, pensado como still de una escena de película.
-            </figcaption>
-          </figure>
-
-        
-
-          <figure>
-            <img src="imagenes/gata.JPG" alt="Gata">
-            <figcaption>
-             
-              Interludio íntimo: un gesto doméstico que baja la intensidad y acerca la editorial a lo cotidiano.
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="imagenes/revista.JPG" alt="Revista">
-            <figcaption>
-             
-              Still life de publicaciones y papeles impresos, pensado como doble página para prensa o fanzine.
-            </figcaption>
-          </figure>
+          <img src="imagenes/alemania.JPG" alt="">
+          <img src="imagenes/boedo.JPG" alt="">
+          <video src="imagenes/galerias.MP4" poster="imagenes/galerias.JPG" controls></video>
+          <img src="imagenes/gata.JPG" alt="">
+          <img src="imagenes/revista.JPG" alt="">
         </div>
       </details>
 
-      <!-- =========================
-           SERVICIO 2 – IDENTIDAD VISUAL PARA MARCAS
-      ========================== -->
-      <details id="identidad" class="servicio-bloque">
-        <summary class="servicio-summary">
-          <div>
-            <h2>Identidad visual para marcas</h2>
-            <p class="meta-servicio">
-              Dirección de arte, atmósferas, color y texturas para una estética consistente.
-            </p>
-          </div>
-        </summary>
+      <!-- Identidad visual para marcas -->
+      <details class="servicio">
+        <summary><h3>Identidad visual para marcas</h3></summary>
+        <p class="serv-desc">Dirección de arte, atmósferas, color y texturas para una estética consistente.</p>
 
         <div class="servicio-grid">
-          <figure>
-            <img src="imagenes/a.JPG" alt="Escena A">
-            <figcaption>
-             
-              Paisaje abierto y horizonte largo para construir una marca asociada a calma, naturaleza y aire libre.
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="imagenes/b.JPG" alt="Escena B">
-            <figcaption>
-              
-              Verdes intensos y textura orgánica, pensados para proyectos vinculados a lo botánico o lo sustentable.
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="imagenes/c.JPG" alt="Escena C">
-            <figcaption>
-             
-              Espacio interior y objetos en reposo: ideal para construir identidad en emprendimientos artesanales.
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="imagenes/d.JPG" alt="Escena D">
-            <figcaption>
-              Picnic, manteles y luz dorada: una narrativa de encuentro y disfrute alrededor de una marca.
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="imagenes/e.JPG" alt="Escena E">
-            <figcaption>
-             
-              Repetición de elementos en frascos y recipientes, pensada para productos en serie o colecciones.
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="imagenes/f.JPG" alt="Escena F">
-            <figcaption>
-            
-              Mesa compartida y presencia humana: marcas que se construyen alrededor de comunidad y rituales.
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="imagenes/g.JPG" alt="Escena G">
-            <figcaption>
-             
-              Comida como protagonista, con foco en la composición y el color como parte del lenguaje visual.
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="imagenes/h.JPG" alt="Escena H">
-            <figcaption>
-             
-              Detalle en manos y vajilla: close-ups que funcionan como piezas clave de branding para redes.
-            </figcaption>
-          </figure>
+          <img src="imagenes/a.JPG" alt="">
+          <img src="imagenes/b.JPG" alt="">
+          <img src="imagenes/c.JPG" alt="">
+          <img src="imagenes/d.JPG" alt="">
+          <img src="imagenes/e.JPG" alt="">
+          <img src="imagenes/f.JPG" alt="">
+          <img src="imagenes/g.JPG" alt="">
+          <img src="imagenes/h.JPG" alt="">
         </div>
       </details>
 
-      <!-- =========================
-           SERVICIO 3 – COBERTURA PARA ARTISTAS Y EVENTOS
-      ========================== -->
-      <details id="eventos" class="servicio-bloque">
-        <summary class="servicio-summary">
-          <div>
-            <h2>Cobertura para artistas y eventos</h2>
-            <p class="meta-servicio">
-              Backstage, shows, exhibiciones y procesos creativos.
-            </p>
-          </div>
-        </summary>
+      <!-- Cobertura para artistas y eventos -->
+      <details class="servicio">
+        <summary><h3>Cobertura para artistas y eventos</h3></summary>
+        <p class="serv-desc">Backstage, shows, exhibiciones y procesos creativos.</p>
 
         <div class="servicio-grid">
-          <figure>
-            <img src="imagenes/bighead.JPG" alt="Bighead en vivo">
-            <figcaption>
-             
-              Registro de concierto al atardecer: cuerpos, luces y humo en capas para contar la energía del show.
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="imagenes/juampi.JPG" alt="Juampi en escenario">
-            <figcaption>
-              Momento íntimo en escenario, donde la luz recorta al músico y convierte la actuación en escena cinematográfica.
-            </figcaption>
-          </figure>
+          <img src="imagenes/bighead.JPG" alt="">
+          <img src="imagenes/juampi.JPG" alt="">
         </div>
       </details>
 
     </section>
-  </main>
+
+  </section>
+</main>
 </body>
 </html>
-
-
