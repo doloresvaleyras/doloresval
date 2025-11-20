@@ -74,7 +74,7 @@ body{
 .foto:hover figcaption{opacity:1}
 
 /* =========================
-   SOBRE MÍ (por si usás esa página)
+   SOBRE MÍ
 ========================= */
 .about-grid{display:grid;gap:24px;align-items:start;margin-bottom:18px}
 .about-photo img{
@@ -90,20 +90,116 @@ body{
 @media (min-width:1024px){.about-grid{grid-template-columns:minmax(520px,1.2fr) 1fr}}
 
 /* =========================
-   SERVICIOS (y video ancho)
+   SERVICIOS (base + video)
 ========================= */
 .bloque{display:grid;gap:14px}
 .bloque h1{font-size:1.8rem;font-weight:800}
 .card{border:1px solid #eee;border-radius:12px;padding:16px;background:#fff}
 .card h3{font-size:1.1rem;font-weight:800;margin-bottom:.5rem}
 .card p{color:#333;line-height:1.6}
-.media-strip{margin:0 0 40px 0;border-radius:12px;overflow:hidden;position:relative;background:#000;aspect-ratio:21/9;box-shadow:0 8px 20px rgba(0,0,0,.08)}
-.media-strip video{width:100%;height:100%;object-fit:cover;display:block;border:none}
+
+.media-strip{
+  margin:0 0 40px 0;border-radius:12px;overflow:hidden;position:relative;
+  background:#000;aspect-ratio:21/9;box-shadow:0 8px 20px rgba(0,0,0,.08)
+}
+.media-strip video{
+  width:100%;height:100%;object-fit:cover;display:block;border:none
+}
+
+/* =========================
+   SERVICIOS – GALERÍAS INTERNAS (NUEVO)
+   Para usar con <details class="servicio-bloque">
+========================= */
+.servicios-grid{
+  display:grid;
+  gap:16px;
+}
+
+/* Bloque clickeable */
+.servicio-bloque{
+  border:1px solid #eee;
+  border-radius:12px;
+  background:#fff;
+  overflow:hidden;
+}
+
+/* Encabezado (summary) */
+.servicio-bloque > summary{
+  list-style:none;
+  cursor:pointer;
+  padding:16px 18px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+.servicio-bloque > summary::-webkit-details-marker{display:none;}
+
+.servicio-titulo{
+  font-size:1.2rem;
+  font-weight:800;
+  margin-bottom:4px;
+}
+.servicio-texto{
+  color:#333;
+  line-height:1.6;
+  font-size:.95rem;
+}
+
+/* Pequeño indicador opcional, por si querés un "+" a la derecha */
+.servicio-toggle{
+  font-size:1.4rem;
+  line-height:1;
+  color:#9ca3af;
+}
+
+/* Estado abierto */
+.servicio-bloque[open] > summary{
+  background:#fafafa;
+}
+
+/* Galería interna */
+.servicio-gallery{
+  border-top:1px solid #eee;
+  padding:16px 18px;
+  display:grid;
+  gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+
+.servicio-gallery figure{
+  border-radius:10px;
+  overflow:hidden;
+  position:relative;
+  background:#000;
+}
+
+.servicio-gallery img,
+.servicio-gallery video{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  display:block;
+  border:0;
+}
+
+/* Texto sobre imagen (título corto) */
+.servicio-gallery figcaption{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  padding:8px 10px;
+  font-size:.9rem;
+  color:#fff;
+  background:linear-gradient(to top,rgba(0,0,0,.7),transparent);
+}
 
 /* =========================
    SERIES (colapsables)
 ========================= */
-.serie{border:1px solid #eee;border-radius:12px;margin-bottom:18px;overflow:hidden;background:#fff;scroll-margin-top:110px}
+.serie{
+  border:1px solid #eee;border-radius:12px;margin-bottom:18px;
+  overflow:hidden;background:#fff;scroll-margin-top:110px
+}
 .serie-summary{list-style:none;cursor:pointer;padding:16px 18px;background:#fff}
 .serie > summary::-webkit-details-marker{display:none}
 .serie-summary h2{font-size:1.4rem;font-weight:800;margin-bottom:4px}
@@ -112,8 +208,10 @@ body{
 .serie:hover .serie-summary{background:#fafafa}
 
 /* contenido oculto hasta abrir o llegar con #hash */
-.serie-grid{display:none;padding:16px 18px;border-top:1px solid #eee;gap:24px;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:start}
+.serie-grid{
+  display:none;padding:16px 18px;border-top:1px solid #eee;gap:24px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:start
+}
 .serie[open] .serie-grid{display:grid}
 .serie:target .serie-grid{display:grid}
 .serie:target .serie-summary{background:#f7faff}
