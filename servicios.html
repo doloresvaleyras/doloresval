@@ -1,542 +1,231 @@
-/* =========================
-   RESET & BASE
-========================= */
-*{margin:0;padding:0;box-sizing:border-box}
-img{max-width:100%;display:block}
-html{scroll-behavior:smooth}
-body{
-  background:#fff;color:#111;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Servicios - Dolores Val Eyras</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="logo">
+      <img src="imagenes/dve.jpg.png" alt="Logo de Dolores Val Eyras">
+    </div>
+  </header>
 
-/* =========================
-   TOPBAR
-========================= */
-.topbar{
-  height:84px;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 24px;
-  border-bottom:1px solid #e5e5e5;
-  background:#fff;
-  position:sticky;top:0;z-index:20;
-}
-.topbar .logo img{
-  height:40px;width:auto;object-fit:contain;
-}
+  <main class="layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h1 class="nombre">Dolores Val Eyras</h1>
+      <p class="rol">Comunicadora visual</p>
+      <p class="intro">Transformo instantes comunes en historias visuales.</p>
 
-/* =========================
-   LAYOUT
-========================= */
-.layout{
-  display:flex;flex-direction:column;
-}
-.sidebar{
-  padding:24px 18px;
-  border-bottom:1px solid #eee;
-  text-align:left;
-}
-.nombre{
-  font-size:1.6rem;
-  font-weight:800;
-  line-height:1.2;
-  margin-bottom:.35rem;
-}
-.rol{color:#6b7280;margin-bottom:1rem}
-.intro{color:#333;line-height:1.65;margin:12px 0 18px}
-.menu ul{
-  list-style:none;
-  display:flex;flex-direction:column;
-  gap:12px;
-}
-.menu a{
-  text-decoration:none;
-  color:#111;
-  font-weight:700;
-}
-.menu a.activo,
-.menu a:hover{
-  color:#2a5ab8;
-}
-.copy{
-  margin-top:24px;
-  padding:12px;
-  background:#f7f7f7;
-  color:#888;
-  font-size:.9rem;
-  text-align:center;
-  border-radius:6px;
-}
-.contenido{padding:16px}
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="sobre_mi.html">Sobre mí</a></li>
+          <li><a href="series.html">Series</a></li>
+          <li><a href="servicios.html" class="activo">Servicios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
 
-@media (min-width:768px){
-  .layout{
-    flex-direction:row;
-    align-items:flex-start;
-  }
-  .sidebar{
-    width:320px;
-    min-height:calc(100vh - 84px);
-    border-right:1px solid #eee;
-    border-bottom:none;
-    position:sticky;
-    top:84px;
-    display:flex;
-    flex-direction:column;
-  }
-  .contenido{
-    width:calc(100% - 320px);
-    padding:24px;
-  }
-}
-@media (min-width:1024px){
-  .sidebar{
-    width:360px;
-    min-height:calc(100vh - 84px);
-    top:84px;
-    padding:28px 22px;
-  }
-  .contenido{
-    width:calc(100% - 360px);
-    padding:28px;
-  }
-}
+      <footer class="copy">© 2025 – Dolores Val Eyras</footer>
+    </aside>
 
-/* =========================
-   GALERÍA INICIO
-========================= */
-.galeria{
-  display:grid;
-  gap:16px;
-  grid-template-columns:1fr;
-}
-.galeria figure{width:100%}
-.galeria img{
-  width:100%;
-  border-radius:10px;
-  object-fit:cover; /* altura libre, sin aspecto fijo */
-}
-@media (min-width:768px){
-  .galeria{grid-template-columns:repeat(2,1fr);}
-}
-@media (min-width:1024px){
-  .galeria{grid-template-columns:repeat(3,1fr);}
-}
+    <!-- CONTENIDO -->
+    <section class="contenido">
+      <h1 class="nombre" style="margin-bottom:20px;">Servicios</h1>
 
-.foto{
-  position:relative;
-  overflow:hidden;
-  border-radius:10px;
-}
-.foto a{
-  display:block;
-  position:relative;
-  text-decoration:none;
-  color:inherit;
-}
-.foto img{
-  width:100%;
-  height:auto;
-  border-radius:10px;
-  transition:transform .4s ease;
-}
-.foto figcaption{
-  position:absolute;
-  inset:0;
-  border-radius:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:rgba(0,0,0,.55);
-  color:#fff;
-  font-weight:600;
-  font-size:1.1rem;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  opacity:0;
-  transition:opacity .35s ease;
-}
-.foto:hover img{transform:scale(1.05)}
-.foto:hover figcaption{opacity:1}
+      <!-- VIDEO ANCHO -->
+      <figure class="media-strip" aria-label="Video Corriendo">
+        <video
+          src="imagenes/corriendo.mp4"
+          poster="imagenes/corriendo.jpg"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata">
+        </video>
+      </figure>
 
-/* =========================
-   SOBRE MÍ
-========================= */
-.about-grid{
-  display:grid;
-  gap:24px;
-  align-items:start;
-  margin-bottom:18px;
-}
-.about-photo img{
-  width:100%;
-  border-radius:12px;
-  object-fit:cover;
-  box-shadow:0 6px 18px rgba(0,0,0,.08);
-}
-.about-side .eyebrow{
-  font-size:.95rem;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:#9ca3af;
-  margin-bottom:.5rem;
-  font-weight:800;
-}
-.about-side .display{
-  font-size:clamp(1.6rem,3.4vw,2.1rem);
-  font-weight:900;
-  line-height:1.15;
-  margin-bottom:.75rem;
-}
-.about-side .lede{
-  color:#111;
-  line-height:1.7;
-  margin-bottom:.6rem;
-  max-width:34ch;
-}
-.about-body{margin-top:8px}
-.about-body p{
-  color:#111;
-  line-height:1.75;
-  margin-bottom:10px;
-  max-width:90ch;
-}
-.about-body strong{font-weight:800;color:#111}
+      <!-- =========================
+           SERVICIO 1 – FOTOGRAFÍA EDITORIAL
+      ========================== -->
+      <details id="editorial" class="servicio-bloque">
+        <summary class="servicio-summary">
+          <div>
+            <h2>Fotografía editorial</h2>
+            <p class="meta-servicio">
+              Retratos, productos, lifestyle y campañas con estética analógica y cinematográfica.
+            </p>
+          </div>
+        </summary>
 
-@media (min-width:1024px){
-  .about-grid{
-    grid-template-columns:minmax(520px,1.2fr) 1fr;
-  }
-}
+        <div class="servicio-grid">
+          <figure>
+            <img src="imagenes/alemania.jpg" alt="Alemania">
+            <figcaption>
+              <strong>Alemania</strong><br>
+              Muro de afiches y texturas urbanas: capas de color, tipografía y ruido visual que construyen una narrativa editorial.
+            </figcaption>
+          </figure>
 
-/* =========================
-   SERIES – DETALLE
-========================= */
-.serie-detalle{
-  margin-bottom:60px;
-}
-.serie-detalle h2{
-  font-size:1.6rem;
-  font-weight:800;
-  margin-bottom:6px;
-}
-.serie-detalle .meta{
-  color:#6b7280;
-  font-size:.95rem;
-  margin-bottom:10px;
-}
-.serie-detalle p{
-  margin-bottom:18px;
-  line-height:1.6;
-  max-width:65ch;
-}
-.serie-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:24px;
-  align-items:start;
-}
-.serie-grid figure{
-  background:#fff;
-  border:1px solid #e5e5e5;
-  border-radius:12px;
-  overflow:hidden;
-  text-align:center;
-  padding:0 0 14px;
-}
-.serie-grid img{
-  width:100%;
-  display:block;
-  object-fit:cover;
-  border-bottom:1px solid #eee;
-}
-.serie-grid figcaption{
-  padding:10px 12px;
-  font-size:.95rem;
-  color:#333;
-}
+          <figure>
+            <img src="imagenes/boedo.jpg" alt="Boedo">
+            <figcaption>
+              <strong>Boedo</strong><br>
+              Retrato en pasillo con luz baja y atmósfera cinematográfica, pensado como still de una escena de película.
+            </figcaption>
+          </figure>
 
-/* =========================
-   PRINTSHOP (también usado en series antiguas)
-========================= */
-.printshop{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:24px;
-  align-items:start;
-}
-.printshop figure{
-  background:#fff;
-  border:1px solid #e5e5e5;
-  border-radius:12px;
-  overflow:hidden;
-  text-align:center;
-  padding:0 0 18px;
-  transition:transform .25s ease,box-shadow .25s ease;
-}
-.printshop figure:hover{
-  transform:translateY(-4px);
-  box-shadow:0 6px 18px rgba(0,0,0,.08);
-}
-.printshop img{
-  width:100%;
-  display:block;
-  object-fit:cover;
-  border-bottom:1px solid #eee;
-}
+          <figure>
+            <video
+              src="imagenes/galerias.mp4"
+              poster="imagenes/galerias.jpg"
+              controls
+              playsinline
+              preload="metadata">
+            </video>
+            <figcaption>
+              <strong>Galerías</strong><br>
+              Secuencia en movimiento de luces y telas que explora el lado performático de la moda.
+            </figcaption>
+          </figure>
 
-/* =========================
-   SERVICIOS – BLOQUES + VIDEO
-========================= */
+          <figure>
+            <img src="imagenes/gata.jpg" alt="Gata">
+            <figcaption>
+              <strong>Gata</strong><br>
+              Interludio íntimo: un gesto doméstico que baja la intensidad y acerca la editorial a lo cotidiano.
+            </figcaption>
+          </figure>
 
-/* Video tipo "hormigas" */
-.media-strip{
-  margin:0 0 40px 0;
-  border-radius:12px;
-  overflow:hidden;
-  position:relative;
-  background:#000;
-  aspect-ratio:21/9;
-  box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
-.media-strip video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  border:none;
-}
+          <figure>
+            <img src="imagenes/revista.jpg" alt="Revista">
+            <figcaption>
+              <strong>Revista</strong><br>
+              Still life de publicaciones y papeles impresos, pensado como doble página para prensa o fanzine.
+            </figcaption>
+          </figure>
+        </div>
+      </details>
 
-/* Acordeones de servicios */
-.servicio-bloque{
-  border:1px solid #eee;
-  border-radius:12px;
-  margin-bottom:18px;
-  background:#fff;
-  overflow:hidden;
-}
-.servicio-bloque > summary{
-  list-style:none;
-  cursor:pointer;
-  padding:16px 18px;
-  display:flex;
-  align-items:flex-start;
-}
-.servicio-bloque > summary::-webkit-details-marker{display:none}
-.servicio-summary h2{
-  font-size:1.3rem;
-  font-weight:800;
-  margin-bottom:4px;
-}
-.meta-servicio{
-  color:#4b5563;
-  font-size:.95rem;
-}
-.servicio-bloque[open]{
-  box-shadow:0 6px 18px rgba(0,0,0,.06);
-}
-.servicio-grid{
-  padding:0 18px 18px;
-  border-top:1px solid #eee;
-  display:grid;
-  gap:18px;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-}
-.servicio-grid figure{
-  background:#fff;
-  border-radius:10px;
-  overflow:hidden;
-  border:1px solid #f1f1f1;
-}
-.servicio-grid img,
-.servicio-grid video{
-  width:100%;
-  height:auto;
-  display:block;
-  object-fit:cover;
-}
-.servicio-grid figcaption{
-  padding:10px 12px 12px;
-  font-size:.95rem;
-  line-height:1.5;
-  color:#333;
-}
+      <!-- =========================
+           SERVICIO 2 – IDENTIDAD VISUAL PARA MARCAS
+      ========================== -->
+      <details id="identidad" class="servicio-bloque">
+        <summary class="servicio-summary">
+          <div>
+            <h2>Identidad visual para marcas</h2>
+            <p class="meta-servicio">
+              Dirección de arte, atmósferas, color y texturas para una estética consistente.
+            </p>
+          </div>
+        </summary>
 
-/* Bloque simple (sigue existiendo por si lo necesitás) */
-.bloque{display:grid;gap:14px}
-.bloque h1{font-size:1.8rem;font-weight:800}
-.card{
-  border:1px solid #eee;
-  border-radius:12px;
-  padding:16px;
-  background:#fff;
-}
-.card h3{
-  font-size:1.1rem;
-  font-weight:800;
-  margin-bottom:.5rem;
-}
-.card p{color:#333;line-height:1.6}
+        <div class="servicio-grid">
+          <figure>
+            <img src="imagenes/a.jpg" alt="Escena A">
+            <figcaption>
+              <strong>Campaña A</strong><br>
+              Paisaje abierto y horizonte largo para construir una marca asociada a calma, naturaleza y aire libre.
+            </figcaption>
+          </figure>
 
-/* =========================
-   CONTACTO
-========================= */
-.formulario{max-width:560px}
-.formulario label{
-  display:block;
-  font-weight:700;
-  margin:.6rem 0 .25rem;
-}
-.formulario input,
-.formulario textarea{
-  width:100%;
-  padding:12px;
-  border:1px solid #ddd;
-  border-radius:10px;
-  font:inherit;
-  background:#fff;
-}
-.formulario textarea{resize:vertical}
-.formulario button{
-  margin-top:12px;
-  padding:12px 16px;
-  border:0;
-  border-radius:10px;
-  background:#2a5ab8;
-  color:#fff;
-  font-weight:700;
-  cursor:pointer;
-}
-.formulario button:hover{opacity:.9}
+          <figure>
+            <img src="imagenes/b.jpg" alt="Escena B">
+            <figcaption>
+              <strong>Campaña B</strong><br>
+              Verdes intensos y textura orgánica, pensados para proyectos vinculados a lo botánico o lo sustentable.
+            </figcaption>
+          </figure>
 
-/* =========================
-   NEWSLETTER
-========================= */
-.newsletter{
-  margin-top:36px;
-  padding:28px 22px;
-  background:#fff;
-  border:1px solid #eee;
-  border-radius:14px;
-}
-.newsletter h2{
-  font-size:clamp(1.6rem,2.7vw,2.6rem);
-  line-height:1.15;
-  font-weight:800;
-  margin-bottom:12px;
-}
-.newsletter .lead{
-  color:#4b5563;
-  line-height:1.7;
-  margin-bottom:18px;
-  max-width:60ch;
-}
-.newsletter-form{width:100%}
-.newsletter-group{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  width:100%;
-}
-.newsletter-group input[type="email"]{
-  flex:1 1 auto;
-  padding:14px 16px;
-  border:1px solid #d1d5db;
-  border-radius:10px;
-  font:inherit;
-  background:#fff;
-}
-.newsletter-group button{
-  flex:0 0 auto;
-  padding:14px 18px;
-  border:0;
-  border-radius:10px;
-  background:#2a5ab8;
-  color:#fff;
-  font-weight:700;
-  cursor:pointer;
-}
-.newsletter-group button:hover{opacity:.95}
-.newsletter .muted{
-  display:block;
-  margin-top:10px;
-  color:#6b7280;
-}
-@media (max-width:480px){
-  .newsletter-group{
-    flex-direction:column;
-    align-items:stretch;
-  }
-  .newsletter-group button{width:100%}
-}
+          <figure>
+            <img src="imagenes/c.jpg" alt="Escena C">
+            <figcaption>
+              <strong>Campaña C</strong><br>
+              Espacio interior y objetos en reposo: ideal para construir identidad en emprendimientos artesanales.
+            </figcaption>
+          </figure>
 
-/* =========================
-   MODAL GENÉRICO (si lo necesitás en otras páginas)
-========================= */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.85);
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  padding:20px;
-  z-index:1000;
-  opacity:0;
-  transition:opacity .15s ease;
-}
-.modal.show{opacity:1}
-.modal img{
-  max-width:90%;
-  max-height:70vh;
-  border-radius:12px;
-  box-shadow:0 8px 30px rgba(0,0,0,.5);
-  margin-bottom:20px;
-}
-.modal-info{
-  background:#fff;
-  color:#111;
-  padding:20px 24px;
-  border-radius:10px;
-  max-width:520px;
-  width:min(520px,92%);
-  text-align:center;
-}
-.modal-info h3{
-  font-size:1.3rem;
-  margin-bottom:6px;
-}
-.modal-info p{
-  color:#6b7280;
-  margin-bottom:14px;
-}
-.btn-comprar{
-  display:inline-block;
-  background:#2a5ab8;
-  color:#fff;
-  padding:10px 18px;
-  border-radius:8px;
-  font-weight:700;
-  text-decoration:none;
-  transition:all .2s ease;
-}
-.btn-comprar:hover{
-  background:#1f4a9e;
-  transform:scale(1.04);
-}
-.cerrar{
-  position:fixed;
-  top:30px;
-  right:40px;
-  font-size:2rem;
-  color:#fff;
-  cursor:pointer;
-  font-weight:700;
-  background:transparent;
-  border:0;
-  line-height:1;
-  transition:transform .2s ease;
-}
-.cerrar:hover{transform:scale(1.1)}
+          <figure>
+            <img src="imagenes/d.jpg" alt="Escena D">
+            <figcaption>
+              <strong>Campaña D</strong><br>
+              Picnic, manteles y luz dorada: una narrativa de encuentro y disfrute alrededor de una marca.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img src="imagenes/e.jpg" alt="Escena E">
+            <figcaption>
+              <strong>Campaña E</strong><br>
+              Repetición de elementos en frascos y recipientes, pensada para productos en serie o colecciones.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img src="imagenes/f.jpg" alt="Escena F">
+            <figcaption>
+              <strong>Campaña F</strong><br>
+              Mesa compartida y presencia humana: marcas que se construyen alrededor de comunidad y rituales.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img src="imagenes/g.jpg" alt="Escena G">
+            <figcaption>
+              <strong>Campaña G</strong><br>
+              Comida como protagonista, con foco en la composición y el color como parte del lenguaje visual.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img src="imagenes/h.jpg" alt="Escena H">
+            <figcaption>
+              <strong>Campaña H</strong><br>
+              Detalle en manos y vajilla: close-ups que funcionan como piezas clave de branding para redes.
+            </figcaption>
+          </figure>
+        </div>
+      </details>
+
+      <!-- =========================
+           SERVICIO 3 – COBERTURA PARA ARTISTAS Y EVENTOS
+      ========================== -->
+      <details id="eventos" class="servicio-bloque">
+        <summary class="servicio-summary">
+          <div>
+            <h2>Cobertura para artistas y eventos</h2>
+            <p class="meta-servicio">
+              Backstage, shows, exhibiciones y procesos creativos.
+            </p>
+          </div>
+        </summary>
+
+        <div class="servicio-grid">
+          <figure>
+            <img src="imagenes/bighead.jpg" alt="Bighead en vivo">
+            <figcaption>
+              <strong>Bighead</strong><br>
+              Registro de concierto al atardecer: cuerpos, luces y humo en capas para contar la energía del show.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img src="imagenes/juampi.jpg" alt="Juampi en escenario">
+            <figcaption>
+              <strong>Juampi</strong><br>
+              Momento íntimo en escenario, donde la luz recorta al músico y convierte la actuación en escena cinematográfica.
+            </figcaption>
+          </figure>
+        </div>
+      </details>
+
+    </section>
+  </main>
+</body>
+</html>
